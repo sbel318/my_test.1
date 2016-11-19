@@ -1,6 +1,5 @@
-<h1>Editing research</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @research %> |
-<%= link_to 'Back', researches_path %>
+<%- model_class = Research -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Research %></h1>
+</div>
+<%= render :partial => 'form' %>
