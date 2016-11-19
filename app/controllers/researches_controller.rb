@@ -29,6 +29,7 @@ class ResearchesController < ApplicationController
   # POST /researches.json
   def create
     @research = Research.new(research_params)
+    @research.user = current_user
 
     respond_to do |format|
       if @research.save
