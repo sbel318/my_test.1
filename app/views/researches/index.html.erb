@@ -1,0 +1,29 @@
+<h1>Listing researches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Stock</th>
+      <th>Summary</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @researches.each do |research| %>
+      <tr>
+        <td><%= research.user %></td>
+        <td><%= research.stock %></td>
+        <td><%= research.summary %></td>
+        <td><%= link_to 'Show', research %></td>
+        <td><%= link_to 'Edit', edit_research_path(research) %></td>
+        <td><%= link_to 'Destroy', research, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Research', new_research_path %>
